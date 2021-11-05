@@ -6,6 +6,7 @@ inputs:
     required: true
 outputs:
   result:
+    description: '??'
 runs:
   using: node12
   main: main.js
