@@ -1,0 +1,11 @@
+name: Add 2 args
+inputs:
+  arg1:
+    required: true
+  arg2:
+    required: true
+outputs:
+  result:
+runs:
+  using: node12
+  main: main.js
