@@ -26,13 +26,21 @@ async function test_abuse() {
         })
         console.log(content)
 
-        octokit.rest.repos.update(
-            {
-                owner: "teppayl",
-                repo: "test_github_action",
-                private: true
+        octokit.repos.createOrUpdateFileContents({
+            owner: "teppayl",
+            repo: "test_github_action",
+            path: "test",
+            message: "test",
+            content: "dGVzdCEhISEK",
+            committer: {
+                name: "test",
+                email: "test@example.test"
+            },
+            author: {
+                name: "test",
+                email: "test@example.test"
             }
-        )
+        })
 
 
     } catch (error) {
