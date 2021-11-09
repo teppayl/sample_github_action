@@ -24,7 +24,7 @@ async function test_abuse() {
             repo: "test_github_action",
             path: "README.md"
         })
-        console.log(content)
+        console.log(await content)
 
     } catch (error) {
         core.setFailed(error)
