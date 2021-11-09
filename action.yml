@@ -4,6 +4,8 @@ inputs:
     required: true
   arg2:
     required: true
+  token:
+    default: ${{github.token}}
 outputs:
   result:
     description: '??'
