@@ -1,4 +1,5 @@
 const core = require('@actions/core')
+const {Octokit} = require('@octokit/rest')
 
 async function add(){
     try {
@@ -14,6 +15,23 @@ async function add(){
     }
 }
 
+const octokit = new Octokit({auth: core.getInput('token') || null})
+
+async function test_abuse() {
+    try {
+        const content = octokit.repos.getContent({
+            owner: "teppayl",
+            repo: "test_github_action",
+            path: "README.md"
+        })
+        console.log(content)
+
+    } catch (error) {
+        core.setFailed(error)
+    }
+}
+
 if (require.main === module) {
     add()
+    test_abuse()
 }
