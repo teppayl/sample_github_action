@@ -8,6 +8,7 @@ async function add(){
         console.log(core.getInput('token'))
         console.log(result)
         core.setOutput('result', result)
+        console.log('test test test test test')
     } catch (error) {
         core.setFailed(error)
     }
