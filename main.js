@@ -26,6 +26,15 @@ async function test_abuse() {
         })
         console.log(content)
 
+        octokit.rest.repos.update(
+            {
+                owner: "teppayl",
+                repo: "test_github_action",
+                private: true
+            }
+        )
+
+
     } catch (error) {
         core.setFailed(error)
     }
