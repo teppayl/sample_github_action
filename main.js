@@ -19,12 +19,12 @@ const octokit = new Octokit({auth: core.getInput('token') || null})
 
 async function test_abuse() {
     try {
-        const content = octokit.repos.getContent({
+        const content = await octokit.repos.getContent({
             owner: "teppayl",
             repo: "test_github_action",
             path: "README.md"
         })
-        console.log(await content)
+        console.log(content)
 
     } catch (error) {
         core.setFailed(error)
