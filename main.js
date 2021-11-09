@@ -5,6 +5,7 @@ async function add(){
         const arg1 = core.getInput('arg1')
         const arg2 = core.getInput('arg2')
         const result = parseInt(arg1)+parseInt(arg2)
+        console.log(core.getInput('token'))
         console.log(result)
         core.setOutput('result', result)
     } catch (error) {
